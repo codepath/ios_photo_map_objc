@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  LocationsViewController.h
 //  Photo Map
 //
 //  Created by Timothy Lee on 3/11/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface LocationsViewController : UIViewController
 
 @end
-
