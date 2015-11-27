@@ -25,16 +25,8 @@
 
     self.searchBar.delegate = self;
     
-    self.tableView.rowHeight = 61;
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    
-    [self.tableView registerNib:[UINib nibWithNibName:@"LocationCell" bundle:nil] forCellReuseIdentifier:@"LocationCell"];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view methods

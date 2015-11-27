@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11F653001C07D7AB0033EDD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11F652FF1C07D7AB0033EDD9 /* Main.storyboard */; };
+		11F653031C07D83B0033EDD9 /* FullImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F653021C07D83B0033EDD9 /* FullImageViewController.m */; };
+		11F653061C07D8570033EDD9 /* PhotoMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F653051C07D8570033EDD9 /* PhotoMapViewController.m */; };
 		22E45AB01AB0A4ED003FA1E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E45AAF1AB0A4ED003FA1E7 /* main.m */; };
 		22E45AB31AB0A4ED003FA1E7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E45AB21AB0A4ED003FA1E7 /* AppDelegate.m */; };
 		22E45ABB1AB0A4ED003FA1E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22E45ABA1AB0A4ED003FA1E7 /* Images.xcassets */; };
 		22E45ABE1AB0A4ED003FA1E7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E45ABC1AB0A4ED003FA1E7 /* LaunchScreen.xib */; };
 		22E45ACA1AB0A4ED003FA1E7 /* Photo_MapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E45AC91AB0A4ED003FA1E7 /* Photo_MapTests.m */; };
 		22E45AD81AB0A537003FA1E7 /* LocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E45AD61AB0A537003FA1E7 /* LocationsViewController.m */; };
-		22E45AD91AB0A537003FA1E7 /* LocationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E45AD71AB0A537003FA1E7 /* LocationsViewController.xib */; };
 		22E45ADD1AB0A572003FA1E7 /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E45ADB1AB0A572003FA1E7 /* LocationCell.m */; };
-		22E45ADE1AB0A572003FA1E7 /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E45ADC1AB0A572003FA1E7 /* LocationCell.xib */; };
 		D9989A99B5F20EBF132A9F74 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CDC0A543050837D81CEC8CB /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11F652FF1C07D7AB0033EDD9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		11F653011C07D83B0033EDD9 /* FullImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullImageViewController.h; sourceTree = "<group>"; };
+		11F653021C07D83B0033EDD9 /* FullImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullImageViewController.m; sourceTree = "<group>"; };
+		11F653041C07D8570033EDD9 /* PhotoMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoMapViewController.h; sourceTree = "<group>"; };
+		11F653051C07D8570033EDD9 /* PhotoMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoMapViewController.m; sourceTree = "<group>"; };
 		22E45AAA1AB0A4ED003FA1E7 /* Photo Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22E45AAE1AB0A4ED003FA1E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22E45AAF1AB0A4ED003FA1E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -42,10 +48,8 @@
 		22E45AC91AB0A4ED003FA1E7 /* Photo_MapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Photo_MapTests.m; sourceTree = "<group>"; };
 		22E45AD51AB0A537003FA1E7 /* LocationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationsViewController.h; sourceTree = "<group>"; };
 		22E45AD61AB0A537003FA1E7 /* LocationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationsViewController.m; sourceTree = "<group>"; };
-		22E45AD71AB0A537003FA1E7 /* LocationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationsViewController.xib; sourceTree = "<group>"; };
 		22E45ADA1AB0A572003FA1E7 /* LocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationCell.h; sourceTree = "<group>"; };
 		22E45ADB1AB0A572003FA1E7 /* LocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationCell.m; sourceTree = "<group>"; };
-		22E45ADC1AB0A572003FA1E7 /* LocationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationCell.xib; sourceTree = "<group>"; };
 		6CDC0A543050837D81CEC8CB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB3792D1DF353B94BA3A9C3B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F2C94F7360FD8DACFA44D117 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 				22E45AD41AB0A518003FA1E7 /* View Controllers */,
 				22E45AB11AB0A4ED003FA1E7 /* AppDelegate.h */,
 				22E45AB21AB0A4ED003FA1E7 /* AppDelegate.m */,
+				11F652FF1C07D7AB0033EDD9 /* Main.storyboard */,
 				22E45ABA1AB0A4ED003FA1E7 /* Images.xcassets */,
 				22E45ABC1AB0A4ED003FA1E7 /* LaunchScreen.xib */,
 				22E45AAD1AB0A4ED003FA1E7 /* Supporting Files */,
@@ -135,7 +140,6 @@
 			children = (
 				22E45ADA1AB0A572003FA1E7 /* LocationCell.h */,
 				22E45ADB1AB0A572003FA1E7 /* LocationCell.m */,
-				22E45ADC1AB0A572003FA1E7 /* LocationCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -143,9 +147,12 @@
 		22E45AD41AB0A518003FA1E7 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				11F653011C07D83B0033EDD9 /* FullImageViewController.h */,
+				11F653021C07D83B0033EDD9 /* FullImageViewController.m */,
 				22E45AD51AB0A537003FA1E7 /* LocationsViewController.h */,
 				22E45AD61AB0A537003FA1E7 /* LocationsViewController.m */,
-				22E45AD71AB0A537003FA1E7 /* LocationsViewController.xib */,
+				11F653041C07D8570033EDD9 /* PhotoMapViewController.h */,
+				11F653051C07D8570033EDD9 /* PhotoMapViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -250,9 +257,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22E45AD91AB0A537003FA1E7 /* LocationsViewController.xib in Resources */,
+				11F653001C07D7AB0033EDD9 /* Main.storyboard in Resources */,
 				22E45ABE1AB0A4ED003FA1E7 /* LaunchScreen.xib in Resources */,
-				22E45ADE1AB0A572003FA1E7 /* LocationCell.xib in Resources */,
 				22E45ABB1AB0A4ED003FA1E7 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,9 +325,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11F653061C07D8570033EDD9 /* PhotoMapViewController.m in Sources */,
 				22E45AB31AB0A4ED003FA1E7 /* AppDelegate.m in Sources */,
 				22E45AB01AB0A4ED003FA1E7 /* main.m in Sources */,
 				22E45ADD1AB0A572003FA1E7 /* LocationCell.m in Sources */,
+				11F653031C07D83B0033EDD9 /* FullImageViewController.m in Sources */,
 				22E45AD81AB0A537003FA1E7 /* LocationsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
