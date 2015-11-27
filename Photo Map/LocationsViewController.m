@@ -63,9 +63,8 @@ static NSString *const CLIENT_SECRET = @"CLIENT_SECRET GOES HERE";
 #pragma mark - Private methods
 
 - (void)fetchLocationsWithQuery:(NSString *)query {
-    [self fetchLocationsWithQuery:query near:@"Sunnyvale,CA"];
+    [self fetchLocationsWithQuery:query near:@"San Francisco"];
 }
-
 
 - (void)fetchLocationsWithQuery:(NSString *)query near:(NSString *)near {
     NSString *baseUrlString = @"https://api.foursquare.com/v2/venues/search";
@@ -97,14 +96,24 @@ static NSString *const CLIENT_SECRET = @"CLIENT_SECRET GOES HERE";
     [task resume];
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    
+    LocationCell *cell = sender;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+
+    // This is the selected venue
+    NSDictionary *venue = self.results[indexPath.row];
+    
+    NSNumber *lat = [venue valueForKeyPath:@"location.lat"];
+    NSNumber *lng = [venue valueForKeyPath:@"location.lng"];
+    
+    NSLog(@"Latitude: %@, Longitude: %@", lat, lng);
+}
 
 @end
