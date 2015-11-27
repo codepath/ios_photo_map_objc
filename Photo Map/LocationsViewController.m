@@ -9,6 +9,9 @@
 #import "LocationsViewController.h"
 #import "LocationCell.h"
 
+static NSString *const CLIENT_ID = @"CLIENT_ID GOES HERE";
+static NSString *const CLIENT_SECRET = @"CLIENT_SECRET GOES HERE";
+
 @interface LocationsViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -63,25 +66,45 @@
     [self fetchLocationsWithQuery:query near:@"Sunnyvale,CA"];
 }
 
+
 - (void)fetchLocationsWithQuery:(NSString *)query near:(NSString *)near {
-    NSString *url = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?client_id=QA1L0Z0ZNA2QVEEDHFPQWK0I5F1DE3GPLSNW4BZEBGJXUCFL&client_secret=W2AOE1TYC4MHK5SZYOUGX0J3LVRALMPB4CXT3ZH21ZCPUMCU&v=20141020&near=%@&query=%@", [near stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding], [query stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    NSString *baseUrlString = @"https://api.foursquare.com/v2/venues/search";
+    NSString *queryString = [[NSString stringWithFormat:@"client_id=%@&client_secret=%@&v=20141020&near=%@,CA&query=%@",
+                              CLIENT_ID,
+                              CLIENT_SECRET,
+                              near,
+                              query] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
-        self.results = [responseDictionary valueForKeyPath:@"response.venues"];
-        [self.tableView reloadData];
-    }];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@?%@", baseUrlString, queryString]];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]
+                                                          delegate:nil
+                                                     delegateQueue:[NSOperationQueue mainQueue]];
+    
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request
+                                            completionHandler:^(NSData * _Nullable data,
+                                                                NSURLResponse * _Nullable response,
+                                                                NSError * _Nullable error) {
+                                                NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data
+                                                                                                                   options:0
+                                                                                                                     error:NULL];
+                                                NSLog(@"response:%@", responseDictionary);
+                                                self.results = [responseDictionary valueForKeyPath:@"response.venues"];
+                                                [self.tableView reloadData];
+                                            }];
+    
+    [task resume];
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
